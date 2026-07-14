@@ -127,8 +127,8 @@ namespace osu.Game.Tests.Visual.Multiplayer
         [Test]
         public void TestVoteDifferentDifficulties()
         {
-            const int beatmapId1 = 0;
-            const int beatmapId2 = 1;
+            const int beatmapid1 = 0;
+            const int beatmapid2 = 1;
 
             for (int i = 0; i < 2; i++)
             {
@@ -143,7 +143,7 @@ namespace osu.Game.Tests.Visual.Multiplayer
                     });
 
                     MultiplayerClient.ChangeUserState(userId, MultiplayerUserState.Playing);
-                    MultiplayerClient.ChangeUserStyle(userId, beatmapId1, 0);
+                    MultiplayerClient.ChangeUserStyle(userId, beatmapid1, 0);
                 });
             }
 
@@ -156,11 +156,11 @@ namespace osu.Game.Tests.Visual.Multiplayer
                 });
 
                 MultiplayerClient.ChangeUserState(2, MultiplayerUserState.Playing);
-                MultiplayerClient.ChangeUserStyle(2, beatmapId2, 0);
+                MultiplayerClient.ChangeUserStyle(2, beatmapid2, 0);
             });
             AddStep("change local user beatmap id same as user 0 and 1", () =>
             {
-                MultiplayerClient.ChangeUserStyle(beatmapId1, 0);
+                MultiplayerClient.ChangeUserStyle(beatmapid1, 0);
             });
             AddStep("local user votes", () => this.ChildrenOfType<MultiplayerSkipOverlay.Button>().Single().TriggerClick());
         }
