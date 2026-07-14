@@ -79,7 +79,9 @@ namespace osu.Game.Screens.OnlinePlay.Multiplayer
         {
             if (client.Room == null || client.Room.Settings.AutoSkip)
                 return;
+
             int localBeatmapId = client.LocalUser?.BeatmapId ?? client.Room.CurrentPlaylistItem.BeatmapID;
+
             bool isSameDifficulty(MultiplayerRoomUser u)
             {
                 return (u.BeatmapId ?? client.Room.CurrentPlaylistItem.BeatmapID) == localBeatmapId;

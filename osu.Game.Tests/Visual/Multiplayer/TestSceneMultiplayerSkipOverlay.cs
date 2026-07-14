@@ -129,6 +129,7 @@ namespace osu.Game.Tests.Visual.Multiplayer
         {
             const int beatmapId1 = 0;
             const int beatmapId2 = 1;
+
             for (int i = 0; i < 2; i++)
             {
                 int userId = i;
@@ -145,12 +146,13 @@ namespace osu.Game.Tests.Visual.Multiplayer
                     MultiplayerClient.ChangeUserStyle(userId, beatmapId1, 0);
                 });
             }
-            AddStep($"join user {2}", () =>
+
+            AddStep("join user 2", () =>
             {
                 MultiplayerClient.AddUser(new APIUser
                 {
                     Id = 2,
-                    Username = $"User {2}"
+                    Username = "User 2"
                 });
 
                 MultiplayerClient.ChangeUserState(2, MultiplayerUserState.Playing);
