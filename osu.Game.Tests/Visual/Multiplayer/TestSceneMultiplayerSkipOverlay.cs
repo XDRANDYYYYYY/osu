@@ -127,8 +127,8 @@ namespace osu.Game.Tests.Visual.Multiplayer
         [Test]
         public void TestVoteDifferentDifficulties()
         {
-            int beatmapId1 = 0;
-            int beatmapId2 = 1;
+            const int beatmapId1 = 0;
+            const int beatmapId2 = 1;
             for (int i = 0; i < 2; i++)
             {
                 int userId = i;
